@@ -7,28 +7,24 @@ export default function Dashboard({ auth }) {
         <AuthenticatedLayout
             user={auth.user}
             header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+                <h2 className="font-semibold text-xl text-dark leading-tight">
                     Bienvenido: {auth.user.name}
                 </h2>
             }
         >
             <Head title="Perfil" />
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-green-300 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">Feed!</div>
+            <div className="py-5">
+                <div className="container">
+                    <div className="bg-success overflow-hidden shadow-sm rounded">
+                        <div className="p-4 text-dark">Feed!</div>
 
-                        <ol class="relative border-s border-gray-200 dark:border-gray-700">
-                            <li class="mb-10 ms-4">
-                                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                    February 2022
-                                </time>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    Application UI code in Tailwind CSS
-                                </h3>
-                                <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                        <ol className="border-start border-dark">
+                            <li className="mb-4 ms-3">
+                                <div className="position-absolute bg-dark rounded-circle mt-2 ms-n2 border border-white" style={{ width: "12px", height: "12px" }}></div>
+                                <time className="mb-1 text-muted d-block">February 2022</time>
+                                <h3 className="fs-5 text-dark">Application UI code in Tailwind CSS</h3>
+                                <p className="text-muted">
                                     Get access to over 20+ pages including a
                                     dashboard layout, charts, kanban board,
                                     calendar, and pre-order E-commerce &
@@ -36,50 +32,38 @@ export default function Dashboard({ auth }) {
                                 </p>
                                 <a
                                     href="#"
-                                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                                    className="btn btn-outline-secondary btn-sm"
                                 >
                                     Learn more{" "}
                                     <svg
-                                        class="w-3 h-3 ms-2 rtl:rotate-180"
-                                        aria-hidden="true"
+                                        className="bi bi-arrow-right ms-1"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
-                                        viewBox="0 0 14 10"
+                                        viewBox="0 0 16 16"
                                     >
                                         <path
-                                            stroke="currentColor"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M1 5h12m0 0L9 1m4 4L9 9"
+                                            fillRule="evenodd"
+                                            d="M10.854 4.146a.5.5 0 0 1 .708.708L8.707 8l2.855 2.854a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5z"
                                         />
                                     </svg>
                                 </a>
                             </li>
-                            <li class="mb-10 ms-4">
-                                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                    March 2022
-                                </time>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    Marketing UI design in Figma
-                                </h3>
-                                <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+                            <li className="mb-4 ms-3">
+                                <div className="position-absolute bg-dark rounded-circle mt-2 ms-n2 border border-white" style={{ width: "12px", height: "12px" }}></div>
+                                <time className="mb-1 text-muted d-block">March 2022</time>
+                                <h3 className="fs-5 text-dark">Marketing UI design in Figma</h3>
+                                <p className="text-muted">
                                     All of the pages and components are first
                                     designed in Figma and we keep a parity
                                     between the two versions even as we update
                                     the project.
                                 </p>
                             </li>
-                            <li class="ms-4">
-                                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                    April 2022
-                                </time>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                    E-Commerce UI code in Tailwind CSS
-                                </h3>
-                                <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+                            <li className="ms-3">
+                                <div className="position-absolute bg-dark rounded-circle mt-2 ms-n2 border border-white" style={{ width: "12px", height: "12px" }}></div>
+                                <time className="mb-1 text-muted d-block">April 2022</time>
+                                <h3 className="fs-5 text-dark">E-Commerce UI code in Tailwind CSS</h3>
+                                <p className="text-muted">
                                     Get started with dozens of web components
                                     and interactive elements built on top of
                                     Tailwind CSS.
@@ -87,14 +71,11 @@ export default function Dashboard({ auth }) {
                             </li>
                         </ol>
 
-                        <div
-                            class="accordion accordion-flush"
-                            id="accordionFlushExample"
-                        >
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
+                        <div className="accordion accordion-flush" id="accordionFlushExample">
+                            <div className="accordion-item">
+                                <h2 className="accordion-header" id="flush-headingOne">
                                     <button
-                                        class="accordion-button collapsed"
+                                        className="accordion-button collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseOne"
@@ -106,10 +87,11 @@ export default function Dashboard({ auth }) {
                                 </h2>
                                 <div
                                     id="flush-collapseOne"
-                                    class="accordion-collapse collapse"
+                                    className="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne"
                                     data-bs-parent="#accordionFlushExample"
                                 >
-                                    <div class="accordion-body">
+                                    <div className="accordion-body">
                                         Placeholder content for this accordion,
                                         which is intended to demonstrate the{" "}
                                         <code>.accordion-flush</code> class.
@@ -117,10 +99,10 @@ export default function Dashboard({ auth }) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
+                            <div className="accordion-item">
+                                <h2 className="accordion-header" id="flush-headingTwo">
                                     <button
-                                        class="accordion-button collapsed"
+                                        className="accordion-button collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseTwo"
@@ -132,10 +114,11 @@ export default function Dashboard({ auth }) {
                                 </h2>
                                 <div
                                     id="flush-collapseTwo"
-                                    class="accordion-collapse collapse"
+                                    className="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo"
                                     data-bs-parent="#accordionFlushExample"
                                 >
-                                    <div class="accordion-body">
+                                    <div className="accordion-body">
                                         Placeholder content for this accordion,
                                         which is intended to demonstrate the{" "}
                                         <code>.accordion-flush</code> class.
@@ -145,10 +128,10 @@ export default function Dashboard({ auth }) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
+                            <div className="accordion-item">
+                                <h2 className="accordion-header" id="flush-headingThree">
                                     <button
-                                        class="accordion-button collapsed"
+                                        className="accordion-button collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseThree"
@@ -160,10 +143,11 @@ export default function Dashboard({ auth }) {
                                 </h2>
                                 <div
                                     id="flush-collapseThree"
-                                    class="accordion-collapse collapse"
+                                    className="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree"
                                     data-bs-parent="#accordionFlushExample"
                                 >
-                                    <div class="accordion-body">
+                                    <div className="accordion-body">
                                         Placeholder content for this accordion,
                                         which is intended to demonstrate the{" "}
                                         <code>.accordion-flush</code> class.

@@ -9,23 +9,17 @@ export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100">
-            <nav className="bg-white border-b border-gray-100">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-32">
-                        <div className="flex">
-                            <div className="shrink-0 flex items-center">
+        <div className="min-vh-100 bg-light">
+            <nav className="bg-white border-bottom border-light">
+                <div className="container">
+                    <div className="d-flex justify-content-between align-items-center" style={{ height: '8rem' }}>
+                        <div className="d-flex align-items-center">
+                            <div className="me-4">
                                 <Link href="/">
-                                <img
-                                        src={logo}
-                                        alt=""
-                                        srcset=""
-                                        className="size-16"
-                                    />
+                                    <img src={logo} alt="Logo" className="img-fluid" style={{ width: '4rem' }} />
                                 </Link>
                             </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <div className="d-none d-sm-flex gap-3">
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Perfil
                                 </NavLink>
@@ -44,22 +38,23 @@ export default function Authenticated({ user, header, children }) {
                             </div>
                         </div>
 
-                        <div className="hidden sm:flex sm:items-center sm:ms-6">
-                            <div className="ms-3 relative">
+                        <div className="d-none d-sm-flex align-items-center">
+                            <div className="ms-3 position-relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>
-                                        <span className="inline-flex rounded-md">
+                                        <span className="d-inline-flex rounded">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                className="btn btn-link text-secondary p-0 d-flex align-items-center"
                                             >
                                                 {user.name}
-
                                                 <svg
-                                                    className="ms-2 -me-0.5 h-4 w-4"
+                                                    className="ms-2"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
+                                                    width="1rem"
+                                                    height="1rem"
                                                 >
                                                     <path
                                                         fillRule="evenodd"
@@ -81,25 +76,15 @@ export default function Authenticated({ user, header, children }) {
                             </div>
                         </div>
 
-                        <div className="-me-2 flex items-center sm:hidden">
+                        <div className="d-sm-none">
                             <button
                                 onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
-                                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                                className="btn btn-link text-secondary p-2"
                             >
-                                <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <svg className="bi bi-list" width="1.5rem" height="1.5rem" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        className={!showingNavigationDropdown ? 'inline-flex' : 'hidden'}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                    <path
-                                        className={showingNavigationDropdown ? 'inline-flex' : 'hidden'}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
+                                        fillRule="evenodd"
+                                        d={showingNavigationDropdown ? 'M5.646 5.646a.5.5 0 0 1 .708 0L10 9.293l3.646-3.647a.5.5 0 0 1 .708.708L10.707 10l3.647 3.646a.5.5 0 0 1-.708.708L10 10.707l-3.646 3.647a.5.5 0 0 1-.708-.708L9.293 10 5.646 6.354a.5.5 0 0 1 0-.708z' : 'M3.5 12a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13zM3.5 8a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13zM3.5 4a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13z'}
                                     />
                                 </svg>
                             </button>
@@ -107,8 +92,8 @@ export default function Authenticated({ user, header, children }) {
                     </div>
                 </div>
 
-                <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
-                    <div className="pt-2 pb-3 space-y-1">
+                <div className={showingNavigationDropdown ? 'd-block' : 'd-none'}>
+                    <div className="pt-2 pb-3">
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
                             Perfil
                         </ResponsiveNavLink>
@@ -126,13 +111,13 @@ export default function Authenticated({ user, header, children }) {
                         </ResponsiveNavLink>
                     </div>
 
-                    <div className="pt-4 pb-1 border-t border-green-200">
+                    <div className="pt-4 pb-1 border-top border-light">
                         <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">{user.name}</div>
-                            <div className="font-medium text-sm text-gray-500">{user.email}</div>
+                            <div className="fw-medium text-dark">{user.name}</div>
+                            <div className="text-muted">{user.email}</div>
                         </div>
 
-                        <div className="mt-3 space-y-1">
+                        <div className="mt-3">
                             <ResponsiveNavLink href={route('profile.edit')}>Perfil</ResponsiveNavLink>
                             <ResponsiveNavLink method="post" href={route('logout')} as="button">
                                 Salir
@@ -143,8 +128,8 @@ export default function Authenticated({ user, header, children }) {
             </nav>
 
             {header && (
-                <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
+                <header className="bg-white shadow-sm">
+                    <div className="container py-3">{header}</div>
                 </header>
             )}
 
